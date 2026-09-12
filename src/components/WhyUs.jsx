@@ -1,4 +1,4 @@
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ArrowRight } from 'lucide-react';
 
 const WhyUs = () => {
   return (
@@ -10,7 +10,11 @@ const WhyUs = () => {
             <span className="why-us-badge">WHY US?</span>
             <h2 className="why-us-title">Get up and<br />running in<br />30 minutes</h2>
             <a href="#" className="why-us-link">
-              Make the move today <ChevronRight size={16} />
+              Make the move today 
+              <span className="link-icons">
+                <ChevronRight size={16} className="icon-default" />
+                <ArrowRight size={20} className="icon-hover" />
+              </span>
             </a>
           </div>
           

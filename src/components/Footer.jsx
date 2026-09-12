@@ -18,7 +18,7 @@ const Footer = () => {
         {/* Top CTA */}
         <div className="footer-cta">
           <div className="footer-cta-left">
-            <h2 className="footer-cta-title">Start free<br/>today <button className="cta-arrow-btn"><ArrowRight color="#111" size={24} /></button></h2>
+            <h2 className="footer-cta-title">Start free<br/>today <button className="cta-arrow-btn"><ArrowRight color="#111" size={40} /></button></h2>
           </div>
           <div className="footer-cta-right">
             <p>Built on feedback from 150,000+ brands. Try Omnisend and see why they stay.</p>

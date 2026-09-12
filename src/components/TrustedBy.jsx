@@ -1,6 +1,13 @@
 import { ChevronDown } from 'lucide-react';
 
 const TrustedBy = () => {
+  const scrollToFeatures = () => {
+    const featuresSection = document.querySelector('.features-section');
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="trusted-by-wrapper">
       <div className="trusted-by">
@@ -30,8 +37,10 @@ const TrustedBy = () => {
           </div>
         </div>
 
-        <div className="trusted-bottom-arrow">
-          <ChevronDown size={20} color="#111" />
+        <div className="trusted-bottom-arrow" onClick={scrollToFeatures}>
+          <div className="arrow-icon-wrapper">
+            <ChevronDown size={20} color="#111" />
+          </div>
         </div>
       </div>
     </div>

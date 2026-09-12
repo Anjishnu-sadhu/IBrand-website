@@ -14,80 +14,67 @@ const Pricing = () => {
           <p className="pricing-subtitle">
             Save 30% when you pay for 3 months upfront with our Starter Discount. Send SMS worldwide and enjoy award-winning support.
           </p>
-
-          <div className="pricing-controls">
-            <div className="dropdown-container">
-              <label>How many people are you sending to? <Info size={14} className="info-icon" /></label>
-              <div className="dropdown">
-                <span>251 - 500</span>
-                <ChevronDown size={16} />
-              </div>
-            </div>
-            <div className="pricing-discount-badge">
-              <span>DISCOUNT</span>
-              <span>30%</span>
-            </div>
-          </div>
         </div>
 
         <div className="pricing-cards">
-          {/* Free Card */}
+          {/* starter Card */}
           <div className="pricing-card">
-            <h3 className="card-tier">Free</h3>
+            <h3 className="card-tier">Starter</h3>
             <p className="card-desc">Perfect for getting started and testing out email marketing</p>
             <div className="card-price">
-              <span className="price-value">$0</span><span className="price-period">/mo</span>
+              <span className="price-value">₹99,999</span><span className="price-period">/mo</span>
             </div>
-            <p className="card-sub-price">No cost. Without a catch.</p>
+            <p className="card-sub-price">100 Verified Leads</p>
             <button className="btn btn-outline-black btn-full">Sign up</button>
             
             <ul className="card-features">
-              <li>500 monthly emails <Info size={14} className="info-icon" /></li>
-              <li>250 contacts <Info size={14} className="info-icon" /></li>
-              <li>500 Web Push notifications <Info size={14} className="info-icon" /></li>
+              <li>Facebook & Instagram Ads <Info size={14} className="info-icon" /></li>
+              <li>Lead Form + Landing Page<Info size={14} className="info-icon" /></li>
+              <li>IVR & WhatsApp Verification <Info size={14} className="info-icon" /></li>
             </ul>
           </div>
 
-          {/* Standard Card */}
+          {/* growth Card */}
           <div className="pricing-card">
-            <h3 className="card-tier">Standard</h3>
+            <h3 className="card-tier">Growth</h3>
             <p className="card-desc">Best for growing and medium-sized businesses focused on email marketing</p>
             <div className="card-price">
-              <span className="price-value">$11.20</span><span className="price-period">/mo</span>
+              <span className="price-value">₹2,49,999</span><span className="price-period">/mo</span>
             </div>
             <p className="card-sub-price">
               Total of: <span className="strike">$40.00</span> $33.60 today <span className="discount-tag">-30%</span><br/>
-              After 3 months, you will be billed monthly
+            250 + 50 Bonus Leads
             </p>
             <button className="btn btn-black btn-full">Sign up</button>
             
             <ul className="card-features">
-              <li>6,000 emails/mo <Info size={14} className="info-icon" /></li>
-              <li>500 contacts <Info size={14} className="info-icon" /></li>
-              <li>Unlimited Web Push notifications <Info size={14} className="info-icon" /></li>
+              <li>Facebook & Instagram Ads <Info size={14} className="info-icon" /></li>
+              <li>Advanced Lead Filtering <Info size={14} className="info-icon" /></li>
+              <li>IVR + WhatsApp Integrations <Info size={14} className="info-icon" /></li>
+              <li>Creative & Landing Page Design<Info size={14} className="info-icon" /></li>
             </ul>
           </div>
 
-          {/* Pro Card */}
+          {/* scale Card */}
           <div className="pricing-card pro-card">
             <div className="pro-badge"><Sparkles size={12} /> Advanced AI</div>
-            <h3 className="card-tier">Pro</h3>
+            <h3 className="card-tier">Scale</h3>
             <p className="card-desc">Best for high-volume senders aimed at adding extra power with SMS</p>
             <div className="card-price">
-              <span className="price-value">$41.30</span><span className="price-period">/mo</span>
+              <span className="price-value">₹4,99,999</span><span className="price-period">/mo</span>
             </div>
             <p className="card-sub-price">
               Total of: <span className="strike">$177.00</span> $123.90 today <span className="discount-tag">-30%</span><br/>
-              After 3 months, you will be billed monthly
+             500 + 150 Bonus Leads
             </p>
             <button className="btn btn-black btn-full">Sign up</button>
             
             <ul className="card-features">
-              <li className="highlight">Unlimited monthly emails <Info size={14} className="info-icon" /></li>
-              <li>2,500 contacts <Info size={14} className="info-icon" /></li>
-              <li>Unlimited Web Push notifications <Info size={14} className="info-icon" /></li>
-              <li>Add SMS starting at $0.007 <Info size={14} className="info-icon" /></li>
-              <li>AI powered personalizations <Sparkles size={14} className="sparkle-icon-small"/> <Info size={14} className="info-icon" /></li>
+              <li className="highlight">High-Volume Meta Ad Campaigns <Info size={14} className="info-icon" /></li>
+              <li>Campaign Optimisation & Reporting <Info size={14} className="info-icon" /></li>
+              <li>Advanced Lead Qualification<Info size={14} className="info-icon" /></li>
+              <li>IVR + WhatsApp Lead Verification <Info size={14} className="info-icon" /></li>
+              <li>Premium Creative & Landing Page Design <Sparkles size={14} className="sparkle-icon-small"/> <Info size={14} className="info-icon" /></li>
             </ul>
           </div>
         </div>
@@ -130,25 +117,6 @@ const Pricing = () => {
           </div>
         </div>
 
-        {/* Detailed Features List */}
-        <div className="detailed-features">
-          {[0, 1, 2].map((col) => (
-            <div className="feature-column" key={col}>
-              <ul className="detailed-list">
-                <li className={col >= 0 ? '' : 'disabled'}>Free migration <Info size={12} className="info-icon" /></li>
-                <li className={col >= 0 ? '' : 'disabled'}>24/7 support <Info size={12} className="info-icon" /></li>
-                <li className={col >= 0 ? '' : 'disabled'}>Omnisend MCP <Info size={12} className="info-icon" /></li>
-                <li className={col >= 1 ? '' : 'disabled'}>Account expert (from $400) <Info size={12} className="info-icon" /></li>
-                <li className={col >= 1 ? '' : 'disabled'}>Forms AI <Sparkles size={10} className="sparkle-icon-small"/> <Info size={12} className="info-icon" /></li>
-                <li className={col >= 1 ? '' : 'disabled'}>Reports AI <Sparkles size={10} className="sparkle-icon-small"/> <Info size={12} className="info-icon" /></li>
-                <li className={col >= 1 ? '' : 'disabled'}>No Omnisend branding <Info size={12} className="info-icon" /></li>
-                <li className={col >= 1 ? '' : 'disabled'}>Advanced reporting <Info size={12} className="info-icon" /></li>
-                <li className={col >= 1 ? '' : 'disabled'}>Dynamic content <Info size={12} className="info-icon" /></li>
-                <li className={col >= 1 ? '' : 'disabled'}>Personalized product recommender AI <Sparkles size={10} className="sparkle-icon-small"/> <Info size={12} className="info-icon" /></li>
-              </ul>
-            </div>
-          ))}
-        </div>
 
         <div className="pricing-footer">
           <button className="btn btn-black btn-large">Start free</button>
