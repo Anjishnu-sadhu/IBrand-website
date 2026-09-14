@@ -32,7 +32,7 @@ const Hero = ({ onConnectSales }) => {
 
         <div className="hero-actions">
           <button className="btn btn-primary" onClick={onConnectSales}>Connect Sales</button>
-          <button className="btn btn-outline">Free Consulting</button>
+          <button className="btn btn-outline" onClick={onConnectSales}>Free Consulting</button>
         </div>
         
         <p className="hero-disclaimer">
@@ -57,7 +57,7 @@ const Hero = ({ onConnectSales }) => {
           <svg width="80" height="120" viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 20 L30 20 Q50 20 50 40 L50 110" stroke="white" strokeWidth="1.5" />
           </svg>
-          <div className="omnisend-badge">Start with iBrandMark</div>
+          <div className="iBrandMark-badge">Start with iBrandMark</div>
           <div className="arrow-down-badge">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
           </div>

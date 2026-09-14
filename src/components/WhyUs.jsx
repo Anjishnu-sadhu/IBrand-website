@@ -1,6 +1,6 @@
 import { ChevronRight, ArrowRight } from 'lucide-react';
 
-const WhyUs = () => {
+const WhyUs = ({ onConnectSales }) => {
   return (
     <section className="why-us-wrapper">
       <div className="why-us-bg-split"></div>
@@ -9,7 +9,7 @@ const WhyUs = () => {
           <div className="why-us-content">
             <span className="why-us-badge">WHY US?</span>
             <h2 className="why-us-title">Get up and<br />running in<br />30 minutes</h2>
-            <a href="#" className="why-us-link">
+            <a href="#" className="why-us-link" onClick={(e) => { e.preventDefault(); onConnectSales(); }}>
               Make the move today 
               <span className="link-icons">
                 <ChevronRight size={16} className="icon-default" />

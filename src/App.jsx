@@ -14,25 +14,39 @@ import ContactPage from './components/ContactPage';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
+  const [savedScroll, setSavedScroll] = useState(0);
+
+  const navigateToContact = () => {
+    setSavedScroll(window.scrollY);
+    setCurrentPage('contact');
+    window.scrollTo(0, 0);
+  };
+
+  const navigateToHome = () => {
+    setCurrentPage('home');
+    setTimeout(() => {
+      window.scrollTo(0, savedScroll);
+    }, 0);
+  };
 
   return (
     <>
-      <Navbar />
+      <Navbar onConnectSales={navigateToContact} />
       {currentPage === 'home' ? (
         <>
-          <Hero onConnectSales={() => setCurrentPage('contact')} />
+          <Hero onConnectSales={navigateToContact} />
           <TrustedBy />
           <Features />
           <SmarterWithAI />
           <TrustMetrics />
           <Services />
-          <Pricing />
-          <WhyUs />
+          <Pricing onConnectSales={navigateToContact} />
+          <WhyUs onConnectSales={navigateToContact} />
           <FAQ />
-          <Footer />
+          <Footer onConnectSales={navigateToContact} />
         </>
       ) : (
-        <ContactPage onBack={() => setCurrentPage('home')} />
+        <ContactPage onBack={navigateToHome} />
       )}
     </>
   );

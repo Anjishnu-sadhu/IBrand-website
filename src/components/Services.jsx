@@ -8,10 +8,7 @@ import {
   MessageCircle, 
   Send, 
   PhoneCall, 
-  Mic,
-  Instagram,
-  Facebook,
-  Youtube
+  Mic
 } from 'lucide-react';
 
 const servicesData = [

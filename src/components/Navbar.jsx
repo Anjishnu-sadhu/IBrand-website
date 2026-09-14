@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar = ({ onConnectSales }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -30,7 +30,7 @@ const Navbar = () => {
       <nav className="container navbar">
         <div className="nav-logo">
           <span className="nav-logo-icon"></span>
-          omnisend
+          iBrandMark
         </div>
         
         {/* Desktop Menu */}
@@ -50,8 +50,8 @@ const Navbar = () => {
 
         {/* Desktop Actions */}
         <div className="nav-actions">
-          <button className="btn btn-outline">Request demo</button>
-          <button className="btn btn-primary">Start free</button>
+          <button className="btn btn-outline" onClick={onConnectSales}>Request demo</button>
+          <button className="btn btn-primary" onClick={onConnectSales}>Start free</button>
         </div>
 
         {/* Hamburger Icon */}

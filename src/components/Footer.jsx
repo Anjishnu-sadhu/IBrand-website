@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Rss, ArrowRight, CheckCircle2, MessageSquare, Play, Sparkles } from 'lucide-react';
 
-const Footer = () => {
+const Footer = ({ onConnectSales }) => {
   const [email, setEmail] = useState('');
 
   const handleSubscribe = (e) => {
@@ -18,10 +18,10 @@ const Footer = () => {
         {/* Top CTA */}
         <div className="footer-cta">
           <div className="footer-cta-left">
-            <h2 className="footer-cta-title">Start free<br/>today <button className="cta-arrow-btn"><ArrowRight color="#111" size={40} /></button></h2>
+            <h2 className="footer-cta-title">Start free<br/>today <button className="cta-arrow-btn" onClick={onConnectSales}><ArrowRight color="#111" size={40} /></button></h2>
           </div>
           <div className="footer-cta-right">
-            <p>Built on feedback from 150,000+ brands. Try Omnisend and see why they stay.</p>
+            <p>Built on feedback from 150,000+ brands. Try iBrandMark and see why they stay.</p>
           </div>
         </div>
 
@@ -32,17 +32,17 @@ const Footer = () => {
           {/* Left Column */}
           <div className="footer-brand-col">
             <div className="footer-logo">
-               <span className="nav-logo-icon"></span> omnisend
+               <span className="nav-logo-icon"></span> iBrandMark
             </div>
             <p className="footer-brand-desc">The integrated marketing automation platform for ecommerce.</p>
             
             <div className="footer-award-badge">
               <div className="award-stars">★★★★★</div>
-              <p>Omnisend has been recognized as the Best Email Marketing Tool for Ecommerce by Email Tool Tester.</p>
+              <p>iBrandMark has been recognized as the Best Email Marketing Tool for Ecommerce by Email Tool Tester.</p>
             </div>
 
             <div className="footer-ask-ai">
-              <h4>Ask AI <Sparkles size={14} className="sparkle-icon"/> about Omnisend</h4>
+              <h4>Ask AI <Sparkles size={14} className="sparkle-icon"/> about iBrandMark</h4>
               <div className="ai-buttons">
                  <button><CheckCircle2 size={14}/> Features</button>
                  <button><MessageSquare size={14}/> Pricing</button>
@@ -69,7 +69,7 @@ const Footer = () => {
                   <button type="submit" className="btn-subscribe">Subscribe</button>
                 </form>
                 <p className="newsletter-disclaimer">
-                  By submitting your email, you consent to Omnisend sending you marketing emails about our products, content, and offers. You can unsubscribe at any time via the link in every email. For more details, check our <a href="#">Privacy Policy</a>.
+                  By submitting your email, you consent to iBrandMark sending you marketing emails about our products, content, and offers. You can unsubscribe at any time via the link in every email. For more details, check our <a href="#">Privacy Policy</a>.
                 </p>
               </div>
             </div>
@@ -105,8 +105,8 @@ const Footer = () => {
               <div className="link-col">
                 <h4>Comparisons</h4>
                 <ul>
-                  <li><a href="#">Omnisend vs. Klaviyo</a></li>
-                  <li><a href="#">Omnisend vs. Mailchimp</a></li>
+                  <li><a href="#">iBrandMark vs. Klaviyo</a></li>
+                  <li><a href="#">iBrandMark vs. Mailchimp</a></li>
                   <li><a href="#">Klaviyo alternatives</a></li>
                   <li><a href="#">Braze alternatives</a></li>
                   <li><a href="#">Mailchimp alternatives</a></li>
@@ -120,11 +120,11 @@ const Footer = () => {
                   <li><a href="#">Agency partners</a></li>
                   <li><a href="#">Partner portal <span className="tag">LOGIN</span></a></li>
                   <li><a href="#">Agency directory</a></li>
-                  <li><a href="#">Hire an Omnisend Partner</a></li>
+                  <li><a href="#">Hire an iBrandMark Partner</a></li>
                 </ul>
               </div>
               <div className="link-col">
-                <h4>Omnisend</h4>
+                <h4>iBrandMark</h4>
                 <ul>
                   <li><a href="#">About us</a></li>
                   <li><a href="#">Contact us</a></li>
@@ -147,9 +147,9 @@ const Footer = () => {
         <div className="disclaimers">
           <h4>*Disclaimers</h4>
           <ol>
-            <li>The average return of $72 for every dollar spent is based on our internal analysis. This figure represents an estimated average of ecommerce revenue attributed to email, SMS, push campaigns & automations sent by Omnisend merchants on paid plans in 2022. Actual results may vary depending on individual circumstances, market conditions, region, and other factors. Past performance is not indicative of future results.</li>
+            <li>The average return of $72 for every dollar spent is based on our internal analysis. This figure represents an estimated average of ecommerce revenue attributed to email, SMS, push campaigns & automations sent by iBrandMark merchants on paid plans in 2022. Actual results may vary depending on individual circumstances, market conditions, region, and other factors. Past performance is not indicative of future results.</li>
             <li>Pricing comparisons with leading ESPs are based on publicly available standard rates. While we often offer lower prices, actual costs may vary depending on specific service needs and competitor pricing at the time. We do not guarantee the lowest price in every instance. Check our terms and current pricing for the most accurate comparison.</li>
-            <li>Based on publicly available standard rates as of May 2024, comparing Omnisend's Standard plan to Klaviyo's Marketing plan (Email). Excludes SMS and add-ons. Actual savings vary by contact list size, plan tier, billing frequency, region, and features selected. See current pricing for the most accurate comparison.</li>
+            <li>Based on publicly available standard rates as of May 2024, comparing iBrandMark's Standard plan to Klaviyo's Marketing plan (Email). Excludes SMS and add-ons. Actual savings vary by contact list size, plan tier, billing frequency, region, and features selected. See current pricing for the most accurate comparison.</li>
           </ol>
         </div>
         
@@ -157,7 +157,7 @@ const Footer = () => {
         
         <div className="footer-bottom">
           <div className="footer-links">
-            <span>© Omnisend 2024</span>
+            <span>© iBrandMark 2024</span>
             <a href="#">Status</a>
             <a href="#">Data processing agreement</a>
             <a href="#">Terms of Use</a>

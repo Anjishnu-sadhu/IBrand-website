@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Info, Sparkles, ChevronDown } from 'lucide-react';
 
-const Pricing = () => {
+const Pricing = ({ onConnectSales }) => {
   const [smsSpend, setSmsSpend] = useState(50);
   const smsVolume = Math.floor(smsSpend / 0.0085).toLocaleString();
   const volumeRate = (0.0085 - (smsSpend * 0.000005)).toFixed(4);
@@ -25,7 +25,7 @@ const Pricing = () => {
               <span className="price-value">₹99,999</span><span className="price-period">/mo</span>
             </div>
             <p className="card-sub-price">100 Verified Leads</p>
-            <button className="btn btn-outline-black btn-full">Sign up</button>
+            <button className="btn btn-outline-black btn-full" onClick={onConnectSales}>Sign up</button>
             
             <ul className="card-features">
               <li>Facebook & Instagram Ads <Info size={14} className="info-icon" /></li>
@@ -45,7 +45,7 @@ const Pricing = () => {
               Total of: <span className="strike">$40.00</span> $33.60 today <span className="discount-tag">-30%</span><br/>
             250 + 50 Bonus Leads
             </p>
-            <button className="btn btn-black btn-full">Sign up</button>
+            <button className="btn btn-black btn-full" onClick={onConnectSales}>Sign up</button>
             
             <ul className="card-features">
               <li>Facebook & Instagram Ads <Info size={14} className="info-icon" /></li>
@@ -67,7 +67,7 @@ const Pricing = () => {
               Total of: <span className="strike">$177.00</span> $123.90 today <span className="discount-tag">-30%</span><br/>
              500 + 150 Bonus Leads
             </p>
-            <button className="btn btn-black btn-full">Sign up</button>
+            <button className="btn btn-black btn-full" onClick={onConnectSales}>Sign up</button>
             
             <ul className="card-features">
               <li className="highlight">High-Volume Meta Ad Campaigns <Info size={14} className="info-icon" /></li>
@@ -82,10 +82,10 @@ const Pricing = () => {
         {/* SMS Credits Block */}
         <div className="sms-credits-block">
           <div className="sms-left">
-            <h3>Add Global SMS<br/>credits to your<br/>Pro plan.</h3>
-            <p className="sms-desc">SMS is available in multiple<br/>countries. Price estimated for:</p>
+            <h3>Add Domestic SMS credits<br/>to your<br/>Pro plan.</h3>
+            <p className="sms-desc">SMS is available in multiple<br/>states. Price estimated for:</p>
             <div className="sms-dropdown">
-              <span>United States of America</span> <ChevronDown size={14} />
+              <span>Chandigarh</span> <ChevronDown size={14} />
             </div>
           </div>
           <div className="sms-right">
@@ -119,7 +119,7 @@ const Pricing = () => {
 
 
         <div className="pricing-footer">
-          <button className="btn btn-black btn-large">Start free</button>
+          <button className="btn btn-black btn-large" onClick={onConnectSales}>Start free</button>
         </div>
       </div>
     </section>

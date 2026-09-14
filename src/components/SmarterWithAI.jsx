@@ -6,9 +6,9 @@ const SmarterWithAI = () => {
       <div className="container ai-section-wrapper">
         <div className="ai-card">
           <div className="ai-content">
-            <h2 className="ai-title">Smarter with<br />Omnisend AI</h2>
+            <h2 className="ai-title">Smarter with<br />iBrandMark AI</h2>
             <p className="ai-desc">
-              Let Omnisend AI help you work faster and smarter. Generate email content, personalize product recommendations, and even build segments with just a description.
+              Let iBrandMark AI help you work faster and smarter. Generate email content, personalize product recommendations, and even build segments with just a description.
             </p>
             <button className="btn btn-black">Explore all AI features</button>
           </div>

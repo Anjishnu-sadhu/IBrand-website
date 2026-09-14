@@ -1,54 +1,91 @@
-import { ArrowLeft, Mail, Phone, MapPin } from 'lucide-react';
+import { ArrowLeft, Mail, Phone, MapPin, Check } from 'lucide-react';
 
 const ContactPage = ({ onBack }) => {
   return (
-    <div className="contact-page">
-      <div className="container">
-        <button className="back-btn" onClick={onBack}>
+    <div className="contact-page custom-contact-page">
+      <div className="contact-watermark">Contact Us</div>
+      <div className="container contact-container-custom">
+        <button className="back-btn" onClick={onBack} style={{position: 'relative', zIndex: 10, marginBottom: '2rem'}}>
           <ArrowLeft size={20} /> Back to Home
         </button>
-        
-        <div className="contact-content">
-          <div className="contact-left">
-            <span className="why-us-badge">GET IN TOUCH</span>
-            <h1 className="contact-title">Let's build<br/>something<br/><span className="text-gradient">amazing</span></h1>
-            <p className="contact-desc">
-              Whether you need more customers, better conversion rates, or a complete digital overhaul, we know how to get you there.
+
+        <div className="contact-main-grid">
+          {/* Left Column */}
+          <div className="contact-left-col">
+            <h1 className="contact-heading">Reach out ↗</h1>
+            <p className="contact-intro">
+              Have a question or need assistance?<br/>
+              Reach out to our dedicated support team.<br/>
+              We're here to help with any inquiries you<br/>
+              may have.
             </p>
+
+            <ul className="contact-features-list">
+              <li>
+                <div className="check-icon-wrapper"><Check size={14} strokeWidth={3} /></div>
+                <span>Personalized assistance</span>
+              </li>
+              <li>
+                <div className="check-icon-wrapper"><Check size={14} strokeWidth={3} /></div>
+                <span>Timely response</span>
+              </li>
+              <li>
+                <div className="check-icon-wrapper"><Check size={14} strokeWidth={3} /></div>
+                <span>Comprehensive support</span>
+              </li>
+            </ul>
+
+            <div className="contact-social-buttons">
+              <a href="#" className="social-btn">
+                 <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+              </a>
+              <a href="#" className="social-btn">
+                 <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+              </a>
+              <a href="#" className="social-btn">
+                 <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm3.98-10.181a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" /></svg>
+              </a>
+            </div>
           </div>
-          
-          <div className="contact-right">
-            <div className="contact-card">
-              <h3>Contact Information</h3>
-              
-              <div className="contact-info-item">
-                <div className="contact-icon"><Mail size={20} /></div>
-                <div>
-                  <p className="contact-label">Email</p>
-                  <a href="mailto:webczarsolutionemail.com" className="contact-link">webczarsolutionemail.com</a>
-                </div>
+
+          {/* Right Column Form */}
+          <div className="contact-right-col">
+            <div className="contact-form-card">
+              <div className="form-row">
+                <input type="text" placeholder="Name" className="form-input" />
+                <input type="email" placeholder="Email" className="form-input" />
               </div>
-              
-              <div className="contact-info-item">
-                <div className="contact-icon"><Phone size={20} /></div>
-                <div>
-                  <p className="contact-label">Phone</p>
-                  <a href="tel:+91 9896675313" className="contact-link">+91 9896675313</a>
-                </div>
-              </div>
-              
-              <div className="contact-info-item">
-                <div className="contact-icon"><MapPin size={20} /></div>
-                <div>
-                  <p className="contact-label">Office</p>
-                  <p className="contact-text">Kalkat Bhawan<br/>2nd, Floor</p>
-                </div>
-              </div>
-              
-              <div className="contact-socials">
-                <a href="#" className="social-icon in-icon">In</a>
-                <a href="#" className="social-icon x-icon">X</a>
-              </div>
+              <textarea placeholder="Message" className="form-textarea"></textarea>
+              <button className="form-submit-btn">Submit</button>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Cards */}
+        <div className="contact-bottom-cards">
+          <div className="info-card">
+            <div className="info-card-icon-wrapper"><Mail size={18} strokeWidth={1.5} /></div>
+            <div className="info-card-text">
+              <h4>Email us</h4>
+              <p style={{ lineHeight: '1.6' }}>
+                Info.ibrandmark@gmail.com<br/>
+                Ibrandmarkgroup@gmail.com<br/>
+                Info@ibrandmark.com
+              </p>
+            </div>
+          </div>
+          <div className="info-card">
+            <div className="info-card-icon-wrapper"><Phone size={18} strokeWidth={1.5} /></div>
+            <div className="info-card-text">
+              <h4>Call us</h4>
+              <p>+91 9988221729</p>
+            </div>
+          </div>
+          <div className="info-card">
+            <div className="info-card-icon-wrapper"><MapPin size={18} strokeWidth={1.5} /></div>
+            <div className="info-card-text">
+              <h4>Our location</h4>
+              <p>Kalkat Bhawan, 2nd Floor</p>
             </div>
           </div>
         </div>
