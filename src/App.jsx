@@ -11,6 +11,7 @@ import WhyUs from './components/WhyUs';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import ContactPage from './components/ContactPage';
+import AdminPage from './components/AdminPage';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -19,6 +20,12 @@ function App() {
   const navigateToContact = () => {
     setSavedScroll(window.scrollY);
     setCurrentPage('contact');
+    window.scrollTo(0, 0);
+  };
+
+  const navigateToAdmin = () => {
+    setSavedScroll(window.scrollY);
+    setCurrentPage('admin');
     window.scrollTo(0, 0);
   };
 
@@ -31,7 +38,7 @@ function App() {
 
   return (
     <>
-      <Navbar onConnectSales={navigateToContact} />
+      <Navbar onConnectSales={navigateToContact} onAdmin={navigateToAdmin} />
       {currentPage === 'home' ? (
         <>
           <Hero onConnectSales={navigateToContact} />
@@ -45,8 +52,10 @@ function App() {
           <FAQ />
           <Footer onConnectSales={navigateToContact} />
         </>
-      ) : (
+      ) : currentPage === 'contact' ? (
         <ContactPage onBack={navigateToHome} />
+      ) : (
+        <AdminPage onBack={navigateToHome} />
       )}
     </>
   );
