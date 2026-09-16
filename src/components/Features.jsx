@@ -7,40 +7,45 @@ const tabsData = [
     label: 'Meta Ads',
     title: 'Reach the right audience\\nwith powerfull meta Ads',
     features: ['Targeted Audience Reach', 'Lead Generation Campaigns', 'Retargeting & Remarketing', 'Performance Tracking & Reports', 'Campaign Optimization'],
-    testimonial: "Salomon Japan's email campaigns average 45% open rate, 1.4% click-through, and ~¥1.9M JPY in revenue per send",
-    brand: 'SALOMON'
+    testimonial: "we manage every step to maximize your ad spend and deliver measurable results across Facebook and Instagram.",
+    // brand: 'SALOMON',
+    image: '/meta2.jpg'
   },
   {
     id: 'Text Messages',
     label: 'Text Messages',
     title: 'Create text messages that\\nconnect with your audience',
     features: ['Personalized Text Messages', 'Instant Message Delivery', 'Targeted Audience Segmentation', 'Smart Links & Call-to-Actions', 'Message Delivery Reports'],
-    testimonial: 'Integrating with our tech stack took minutes, not days. It just works seamlessly out of the box.',
-    brand: 'ALLBIRDS'
+    testimonial: 'Create impactful campaigns, reach the right audience, and track performance all from one powerful platform.',
+    // brand: 'ALLBIRDS',
+    image: '/text-messages.jpg'
   },
   {
     id: 'RCS',
     label: 'RCS',
     title: 'Create RCS campaigns\\nthat engage your customers',
     features: ['Rich Media Messages', 'Interactive Buttons & Carousels', 'Product & Service Showcases', 'Personalized Customer Journeys', 'Campaign Analytics & Reports'],
-    testimonial: 'Our automated flows now account for over 30% of our total monthly revenue.',
-    brand: 'STANLEY'
+    testimonial: 'Transform traditional messaging into rich, interactive conversations with RCS.',
+    // brand: 'STANLEY',
+    image: '/rcs.jpg'
   },
   {
     id: 'WhatsApp',
     label: 'WhatsApp Marketing',
     title: 'Grow Your Business with\\nWhatsApp Marketing',
     features: ['Bulk WhatsApp Campaigns', 'Personalized Customer Messages', 'Automated WhatsApp Responses', 'Product & Offer Promotions', 'Campaign Reports & Analytics'],
-    testimonial: 'Hyper-segmentation helped us increase our campaign conversion rates by 2.5x in just two months.',
-    brand: "ARC'TERYX"
+    testimonial: 'Connect with your customers where they’re already active with powerful WhatsApp marketing solutions. Send personalized campaigns, promotional offers, product updates, reminders, and automated messages at scale.',
+    // brand: "ARC'TERYX",
+    image: '/wp-marketing.jpg'
   },
   {
     id: 'Designing',
     label: 'Designing',
     title: 'Designing that brings\\nyour brand to life',
     features: ['Creative & Custom Designs', 'Social Media Post Design', 'Professional Branding Materials', 'Engaging Banner & Ad Designs'],
-    testimonial: 'The gamified popups alone doubled our daily subscriber growth rate within a week.',
-    brand: 'FABER-CASTELL'
+    testimonial: 'Make your brand stand out with creative, professional, and visually engaging designs. From social media creatives and advertisements to branding materials, banners, brochures, and UI/UX designs.',
+    // brand: 'FABER-CASTELL',
+    image: '/designing.jpg'
   }
 ];
 
@@ -96,7 +101,7 @@ const Features = () => {
           </div>
 
           <div className="features-image-col">
-            <img src="/editor-ui.jpg" alt="Email Editor UI" className="editor-image" />
+            <img src={activeTab.image} alt={`${activeTab.label} UI`} className="editor-image" />
           </div>
         </div>
       </div>

@@ -102,8 +102,16 @@ button {
   filter: brightness(0) invert(1);
 }
 
+.header-wrapper.light .nav-logo {
+  color: #003366;
+}
+
+.header-wrapper.light .logo-mark {
+  color: #ffb400; /* Yellow */
+}
+
 .header-wrapper.light .logo-image-anim {
-  filter: brightness(0);
+  filter: invert(14%) sepia(74%) saturate(2758%) hue-rotate(200deg) brightness(95%) contrast(105%);
 }
 
 .nav-logo:hover .logo-image-anim,
@@ -112,7 +120,7 @@ button {
 }
 
 .nav-logo:hover .logo-image-anim {
-  filter: brightness(0);
+  filter: invert(14%) sepia(74%) saturate(2758%) hue-rotate(200deg) brightness(95%) contrast(105%);
 }
 
 .nav-logo-icon {
