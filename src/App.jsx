@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrustedBy from './components/TrustedBy';
 import Features from './components/Features';
-import SmarterWithAI from './components/SmarterWithAI';
+import Marquee from './components/Marquee';
 import TrustMetrics from './components/TrustMetrics';
 import Pricing from './components/Pricing';
 import Services from './components/Services';
@@ -44,7 +44,7 @@ function App() {
           <Hero onConnectSales={navigateToContact} />
           <TrustedBy />
           <Features />
-          <SmarterWithAI />
+          <Marquee />
           <TrustMetrics />
           <Services />
           <Pricing onConnectSales={navigateToContact} />

@@ -42,7 +42,7 @@ const Pricing = ({ onConnectSales }) => {
               <span className="price-value">₹2,49,999</span><span className="price-period">/mo</span>
             </div>
             <p className="card-sub-price">
-              Total of: <span className="strike">$40.00</span> $33.60 today <span className="discount-tag">-30%</span><br/>
+              Total of: <span className="strike">₹40.00</span> ₹33.60 today <span className="discount-tag">-30%</span><br/>
             250 + 50 Bonus Leads
             </p>
             <button className="btn btn-black btn-full" onClick={onConnectSales}>Sign up</button>
@@ -64,7 +64,7 @@ const Pricing = ({ onConnectSales }) => {
               <span className="price-value">₹4,99,999</span><span className="price-period">/mo</span>
             </div>
             <p className="card-sub-price">
-              Total of: <span className="strike">$177.00</span> $123.90 today <span className="discount-tag">-30%</span><br/>
+              Total of: <span className="strike">₹177.00</span> ₹123.90 today <span className="discount-tag">-30%</span><br/>
              500 + 150 Bonus Leads
             </p>
             <button className="btn btn-black btn-full" onClick={onConnectSales}>Sign up</button>
@@ -104,13 +104,13 @@ const Pricing = ({ onConnectSales }) => {
                   }}
                 />
               </div>
-              <div className="slider-value-pill">${smsSpend} ({smsVolume} SMS) <ChevronDown size={14} /></div>
+              <div className="slider-value-pill">₹{smsSpend} ({smsVolume} SMS) <ChevronDown size={14} /></div>
             </div>
             <div className="sms-stats">
-              <div className="sms-price">${smsSpend}<span>/mo</span></div>
+              <div className="sms-price">₹{smsSpend}<span>/mo</span></div>
               <div className="sms-volume">
                 Volume: <strong>{smsVolume} SMS/mo</strong><br/>
-                Volume rate: <strong>${volumeRate} /SMS</strong>
+                Volume rate: <strong>₹{volumeRate} /SMS</strong>
               </div>
               <a href="#" className="check-rates">Check all volume rates</a>
             </div>

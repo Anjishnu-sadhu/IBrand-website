@@ -10,7 +10,6 @@ const Navbar = ({ onConnectSales, onAdmin }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -19,44 +18,48 @@ const Navbar = ({ onConnectSales, onAdmin }) => {
     setIsOpen(!isOpen);
   };
 
+  const handleNavClick = () => {
+    setIsOpen(false);
+  };
+
   const isLight = isScrolled || isHovered;
 
   return (
     <>
-      <header 
+      <header
         className={`header-wrapper ${isLight ? 'light' : ''}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <nav className="container navbar">
           <div className="nav-logo">
-            <span className="nav-logo-icon"></span>
-            iBrandMark
+            <img src="/logo-icon.png" alt="Logo" style={{ height: '60px', objectFit: 'contain' }} className="logo-image-anim" />
+            iBrand<span className="logo-mark">Mark</span>
           </div>
-          
-          {/* Desktop Menu */}
+
           <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
-            <li>Features <ChevronDown size={14} /></li>
-            <li>Pricing</li>
-            <li>Migration <ChevronDown size={14} /></li>
-            <li>Integrations <ChevronDown size={14} /></li>
-            <li>Resources <ChevronDown size={14} /></li>
+            <li onClick={handleNavClick}>Features <ChevronDown size={14} /></li>
+            <li onClick={handleNavClick}>Pricing</li>
+            <li onClick={handleNavClick}>Migration <ChevronDown size={14} /></li>
+            <li onClick={handleNavClick}>Integrations <ChevronDown size={14} /></li>
+            <li onClick={handleNavClick}>Resources <ChevronDown size={14} /></li>
+            <li className="mobile-actions">
+              <button className="btn btn-outline" onClick={() => { handleNavClick(); onConnectSales(); }}>Request demo</button>
+              <button className="btn btn-primary" onClick={() => { handleNavClick(); onConnectSales(); }}>Start free</button>
+            </li>
           </ul>
 
-          {/* Desktop Actions */}
           <div className="nav-actions">
             <button className="btn btn-outline" onClick={onConnectSales}>Request demo</button>
             <button className="btn btn-primary" onClick={onConnectSales}>Start free</button>
           </div>
 
-          {/* Hamburger Icon */}
-          <button className="hamburger" onClick={toggleMenu}>
+          <button className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </nav>
       </header>
 
-      {/* Admin Settings Button */}
       <button
         onClick={onAdmin}
         style={{
@@ -76,14 +79,14 @@ const Navbar = ({ onConnectSales, onAdmin }) => {
           transition: 'all 0.3s ease'
         }}
         onMouseEnter={(e) => {
-          e.target.style.background = 'rgba(144, 244, 136, 0.2)';
-          e.target.style.color = 'var(--accent-green)';
-          e.target.style.borderColor = 'var(--accent-green)';
+          e.currentTarget.style.background = 'rgba(144, 244, 136, 0.2)';
+          e.currentTarget.style.color = 'var(--accent-green)';
+          e.currentTarget.style.borderColor = 'var(--accent-green)';
         }}
         onMouseLeave={(e) => {
-          e.target.style.background = 'rgba(20, 20, 20, 0.9)';
-          e.target.style.color = '#666';
-          e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+          e.currentTarget.style.background = 'rgba(20, 20, 20, 0.9)';
+          e.currentTarget.style.color = '#666';
+          e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
         }}
         title="Email Settings"
       >
