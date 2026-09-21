@@ -32,7 +32,8 @@ const Footer = ({ onConnectSales }) => {
           {/* Left Column */}
           <div className="footer-brand-col">
             <div className="footer-logo">
-               <img src="/logo-icon.png" alt="Logo" style={{ height: '60px', objectFit: 'contain' }} className="logo-image-anim" /> iBrandMark
+               <img src="/logo-icon.png" alt="Logo" style={{ height: '60px', objectFit: 'contain' }} className="logo-image-anim" />
+               <span style={{ display: 'flex', alignItems: 'center', paddingTop: '4px' }}>iBrand<span className="logo-mark">Mark</span></span>
             </div>
             <p className="footer-brand-desc">The integrated marketing automation platform for ecommerce.</p>
             

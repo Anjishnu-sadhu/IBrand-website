@@ -98,21 +98,22 @@ button {
 
 .logo-image-anim {
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
-  margin-right: -1.2rem;
+  margin-right: -1.8rem;
   filter: brightness(0) invert(1);
 }
 
 .header-wrapper.light .nav-logo {
-  color: #003366;
+  color: black;
+  transition: color 0.3s ease;
 }
 
 .header-wrapper.light .logo-mark {
-  color: #ffb400;
-  /* Yellow */
+  color: black;
+  transition: color 0.3s ease;
 }
 
 .header-wrapper.light .logo-image-anim {
-  filter: invert(14%) sepia(74%) saturate(2758%) hue-rotate(200deg) brightness(95%) contrast(105%);
+  filter: brightness(0);
 }
 
 .nav-logo:hover .logo-image-anim,
@@ -122,6 +123,10 @@ button {
 
 .nav-logo:hover .logo-image-anim {
   filter: invert(14%) sepia(74%) saturate(2758%) hue-rotate(200deg) brightness(95%) contrast(105%);
+}
+
+.header-wrapper.light .nav-logo:hover .logo-image-anim {
+  filter: brightness(0);
 }
 
 .nav-logo-icon {
@@ -186,6 +191,10 @@ button {
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+
+.hamburger {
+  display: none;
 }
 
 .btn {

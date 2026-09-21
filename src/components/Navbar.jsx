@@ -30,7 +30,7 @@ const Navbar = ({ onConnectSales }) => {
       <nav className="container navbar">
         <div className="nav-logo">
           <img src="/logo-icon.png" alt="Logo" style={{ height: '60px', objectFit: 'contain' }} className="logo-image-anim" />
-          iBrand<span className="logo-mark">Mark</span>
+          <span style={{ display: 'flex', alignItems: 'center', paddingTop: '4px' }}>iBrand<span className="logo-mark">Mark</span></span>
         </div>
         
         {/* Desktop Menu */}

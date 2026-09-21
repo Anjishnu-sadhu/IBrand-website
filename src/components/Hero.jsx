@@ -46,11 +46,7 @@ const Hero = ({ onConnectSales }) => {
           <img src="/hero-image.jpg" alt="Smiling man" />
         </div>
         
-        <div className="visual-tags">
-          <div className="tag">Abandoned cart</div>
-          <div className="tag">SMS</div>
-          <div className="tag">Email</div>
-        </div>
+
 
         {/* Connection Line */}
         <div className="connection-container">
@@ -63,10 +59,7 @@ const Hero = ({ onConnectSales }) => {
           </div>
         </div>
 
-        <div className="discount-badge">
-          <span>DISCOUNT</span>
-          <span>30%</span>
-        </div>
+
 
         <div className="visual-chart">
           <div className="chart-title">Sales performance</div>
