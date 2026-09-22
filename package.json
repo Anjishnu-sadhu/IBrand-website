@@ -5,12 +5,19 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:server": "node server/index.js",
+    "dev:all": "node server/index.js & vite",
     "build": "vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "node server/index.js"
   },
   "dependencies": {
-    "lucide-react": "^1.44.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^5.1.0",
+    "lucide-react": "^1.45.0",
+    "nodemailer": "^10.0.9",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },

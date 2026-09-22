@@ -159,13 +159,10 @@ const Footer = ({ onConnectSales }) => {
         <div className="footer-bottom">
           <div className="footer-links">
             <span>© iBrandMark 2024</span>
-            <a href="#">Status</a>
-            <a href="#">Data processing agreement</a>
             <a href="#">Terms of Use</a>
             <a href="#">Privacy policy</a>
             <a href="#">Acceptable Use Policy</a>
-            <a href="#">Manage cookie settings</a>
-            <a href="#">Modern Slavery Statement</a>
+             <a href="#">DEVELOPED BY ANJISHNU SADHU</a>
           </div>
           
           <div className="footer-socials">

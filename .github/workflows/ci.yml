@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build-and-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run lint
+        run: npm run lint
+
+      - name: Run build
+        run: npm run build
+
+      - name: Start server and test API
+        run: |
+          node server/index.js &
+          sleep 2
+          curl -s -X POST http://localhost:5000/api/contact \
+            -H "Content-Type: application/json" \
+            -d '{"name":"Test","email":"test@example.com","message":"Hello"}' | grep -q '"success":true' \
+            && echo "API test passed" \
+            || (echo "API test failed" && exit 1)
+          curl -s http://localhost:5000/api/contact | grep -q '"id"' \
+            && echo "GET API test passed" \
+            || (echo "GET API test failed" && exit 1)

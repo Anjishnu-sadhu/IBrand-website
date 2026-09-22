@@ -1,6 +1,41 @@
-import { ArrowLeft, Mail, Phone, MapPin, Check } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowLeft, Mail, Phone, MapPin, Check, Send, Loader2 } from 'lucide-react';
+
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const ContactPage = ({ onBack }) => {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('loading');
+
+    try {
+      const res = await fetch(`${API_URL}/api/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Something went wrong');
+      }
+
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setStatus(null), 5000);
+    } catch {
+      setStatus('error');
+      setTimeout(() => setStatus(null), 5000);
+    }
+  };
+
   return (
     <div className="contact-page custom-contact-page">
       <div className="contact-watermark">Contact Us</div>
@@ -50,14 +85,57 @@ const ContactPage = ({ onBack }) => {
 
           {/* Right Column Form */}
           <div className="contact-right-col">
-            <div className="contact-form-card">
+            <form className="contact-form-card" onSubmit={handleSubmit}>
               <div className="form-row">
-                <input type="text" placeholder="Name" className="form-input" />
-                <input type="email" placeholder="Email" className="form-input" />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  className="form-input"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  className="form-input"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
               </div>
-              <textarea placeholder="Message" className="form-textarea"></textarea>
-              <button className="form-submit-btn">Submit</button>
-            </div>
+              <textarea
+                name="message"
+                placeholder="Message"
+                className="form-textarea"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              ></textarea>
+
+              {status === 'success' && (
+                <div className="form-status success">
+                  <Check size={16} /> Message sent successfully!
+                </div>
+              )}
+              {status === 'error' && (
+                <div className="form-status error">Failed to send. Please try again.</div>
+              )}
+
+              <button
+                type="submit"
+                className="form-submit-btn"
+                disabled={status === 'loading'}
+              >
+                {status === 'loading' ? (
+                  <><Loader2 size={16} className="spin" /> Sending...</>
+                ) : (
+                  <><Send size={16} /> Submit</>
+                )}
+              </button>
+            </form>
           </div>
         </div>
 
